@@ -1,0 +1,10 @@
+function exportEvaluations() {
+  const evaluations = localStorage.getItem('evaluations') || '[]';
+  const blob = new Blob([evaluations], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'evaluations.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
