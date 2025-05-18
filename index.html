@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Skills Speaking Topics</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- SweetAlert2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.3/dist/sweetalert2.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <!-- Header -->
+    <h1 class="text-center mb-4">Life Skills Speaking Topics</h1>
+    <!-- Error Message -->
+    <div id="errorMessage" class="alert alert-danger" role="alert" style="display: none;"></div>
+    <!-- Category Selection -->
+    <h3 class="mb-3">Select Category</h3>
+    <div class="category-buttons mb-4">
+      <button class="btn btn-primary category-btn" aria-label="Select Psychology & Thinking category">Psychology & Thinking</button>
+      <button class="btn btn-primary category-btn" aria-label="Select Learning & Curiosity category">Learning & Curiosity</button>
+    </div>
+    <!-- Category Title -->
+    <h4 id="categoryTitle" class="mb-3"></h4>
+    <!-- Generate Topic Button -->
+    <button id="generateBtn" class="btn btn-success mb-4" disabled aria-label="Generate a new topic">Generate Topic</button>
+    <!-- Suggestions and Prompts -->
+    <div id="autoSuggestions" class="card p-4" role="region" aria-live="polite">
+      <h5 id="topicSuggestion" class="card-title"></h5>
+      <p id="topicDescription" class="card-text"></p>
+      <h6>How to Talk</h6>
+      <ul id="howToTalk" class="list-group list-group-flush mb-3"></ul>
+      <p><strong>Example Scenario:</strong> <span id="exampleScenario"></span></p>
+      <h6>Discussion Prompts</h6>
+      <div id="discussionPrompts" class="mb-3"></div>
+      <button id="evaluateBtn" class="btn btn-info" style="display: none;" aria-label="Evaluate your discussion">Evaluate Discussion</button>
+    </div>
+    <!-- Toggle Suggestions Button -->
+    <button id="toggleSuggestions" class="btn btn-secondary mt-3" style="display: none;" aria-label="Toggle speaking guide visibility">View Speaking Guide</button>
+    <!-- View Evaluations Button -->
+    <button id="viewEvaluations" class="btn btn-secondary mt-3" aria-label="View past evaluations">View Past Evaluations</button>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkZvOYfol==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.3/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyIf25bQ3Zlrjms4H8V5HULf0oDP7r8DqaZGlJDHB1MFWRLv3QQZ+/XvZuJ+/OaTIKOzud0S2VFlfarmsmrjQ==" crossorigin="anonymous"></script>
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
