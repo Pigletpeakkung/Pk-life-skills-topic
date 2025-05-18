@@ -1,3 +1,41 @@
+// ... (rest of your code above remains unchanged)
+
+// Dependency Check Utility
+function checkDependencies() {
+  const missing = [];
+  if (typeof $ === 'undefined') missing.push('jQuery ($)');
+  if (typeof _ === 'undefined') missing.push('Lodash (_)');
+  if (typeof Swal === 'undefined') missing.push('SweetAlert2 (Swal)');
+  if (typeof anime === 'undefined') missing.push('Anime.js (anime)');
+  if (missing.length > 0) {
+    // Try to alert the user in the most basic way possible
+    const message = `Missing dependencies:\n${missing.join('\n')}\n\nPlease ensure these libraries are loaded before this script.`;
+    if (typeof alert !== 'undefined') {
+      alert(message);
+    } else {
+      // fallback: log to console
+      console.error(message);
+    }
+    // Optionally, disable main UI interactions
+    if (typeof $ !== 'undefined') {
+      $('.category-btn, #generateBtn, #toggleSuggestions, #evaluateBtn, #viewEvaluations').prop('disabled', true);
+      $('#errorMessage').text(message).show();
+    }
+    // Prevent further execution
+    throw new Error(message);
+  }
+}
+
+// Run dependency check on document ready or immediately if possible
+if (typeof $ !== 'undefined') {
+  $(document).ready(checkDependencies);
+} else {
+  // If jQuery is missing, check immediately
+  checkDependencies();
+}
+
+// ... (rest of your code below remains unchanged)
+
 const topics = {
  'Psychology & Thinking': {
  'Open Chit Chat': {
